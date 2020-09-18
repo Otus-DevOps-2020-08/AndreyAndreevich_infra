@@ -1,6 +1,8 @@
 # AndreyAndreevich_infra
 AndreyAndreevich Infra repository
 
+`ssh -J bastion someinternalhost`
+
 Нужно выполнить проброс портов через ssh на обоих тачках.
 1. Выполнить на своей тачке: `ssh -L 22222:localhost:22222 -A -N -f bastion`
 2. Выполнить на bastion: `ssh -L 22222:localhost:22 -A -N -f someinternalhost`
