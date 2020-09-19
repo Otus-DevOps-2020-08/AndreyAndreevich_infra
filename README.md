@@ -18,3 +18,7 @@ HostName localhost
 ## Bastion configuration
 bastion_IP = 130.193.56.192
 someinternalhost_IP = 10.128.0.35
+
+# HW 4
+testapp_IP = 130.193.35.203
+testapp_port = 9292
