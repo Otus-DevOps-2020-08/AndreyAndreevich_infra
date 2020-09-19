@@ -16,5 +16,5 @@ HostName localhost
 4. Запустить `ssh someinternalhost`
 
 ## Bastion configuration
-* bastion_IP = 130.193.56.192
-* someinternalhost_IP = 10.128.0.35
+bastion_IP = 130.193.56.192
+someinternalhost_IP = 10.128.0.35
