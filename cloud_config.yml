@@ -1,8 +1,10 @@
 #cloud-config
+disable_root: true
+
 users:
   - default
   - name: andrey
-    groups: users, admin, sudo, root
+    groups: sudo
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
@@ -16,15 +18,16 @@ bootcmd:
 package_update: true
 packages:
   - git
-  - iptables
+  - apt-transport-https
+  - ca-certificates
   - ruby-full
   - ruby-bundler
   - build-essential
   - mongodb-org
 
 runcmd:
-  - sudo systemctl start mongod
-  - sudo systemctl enable mongod
+  - systemctl start mongod
+  - systemctl enable mongod
   - git clone -b monolith https://github.com/express42/reddit.git
   - cd reddit && bundle install
   - puma -d
