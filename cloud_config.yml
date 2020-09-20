@@ -9,6 +9,7 @@ users:
       - ssh-rsa {{ auth_key }}
       - ssh-rsa {{ ssh_pub_key }}
 
+package_update: true
 packages:
   - git
   - ruby-full
