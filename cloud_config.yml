@@ -2,7 +2,7 @@
 users:
   - default
   - name: andrey
-    groups: users, admin, root
+    groups: users, admin, sudo, root
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
@@ -16,6 +16,7 @@ bootcmd:
 package_update: true
 packages:
   - git
+  - iptables
   - ruby-full
   - ruby-bundler
   - build-essential

@@ -20,7 +20,7 @@ bastion_IP = 130.193.56.192
 someinternalhost_IP = 10.128.0.35
 
 ## Homework №4 (cloud-testapp)
-testapp_IP = 130.193.44.140
+testapp_IP = 84.201.168.59
 testapp_port = 9292
 
 Для создания VM и запуска приложения на нем нужно выполнить команду: `./create_vm.sh`
