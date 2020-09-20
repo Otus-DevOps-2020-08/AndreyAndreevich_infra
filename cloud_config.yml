@@ -17,10 +17,13 @@ bootcmd:
 
 package_update: true
 packages:
+  - apt-transport-https
+  - ca-certificates
   - git
   - ruby-full
   - ruby-bundler
   - build-essential
+  - mongodb-org
 
 runcmd:
   - apt-get install -y apt-transport-https ca-certificates
