@@ -1,0 +1,9 @@
+[Unit]
+Description=Run reddit service
+
+[Service]
+Type=simple
+ExecStart=/home/ubuntu/reddit-start.sh
+
+[Install]
+WantedBy=multi-user.target

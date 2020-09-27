@@ -24,3 +24,5 @@ testapp_IP = 130.193.46.203
 testapp_port = 9292
 
 Для создания VM и запуска приложения на нем нужно выполнить команду: `./create_vm.sh`
+
+## Homework №5 (packer-base)
