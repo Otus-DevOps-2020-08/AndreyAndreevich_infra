@@ -3,7 +3,7 @@ disable_root: true
 
 users:
   - default
-  - name: andrey
+  - name: ubuntu
     groups: sudo
     shell: /bin/bash
     sudo: ALL=(ALL) NOPASSWD:ALL
@@ -16,17 +16,20 @@ packages:
   - git
   - ruby-full
   - ruby-bundler
+  - apt-transport-https
+  - ca-certificates
   - build-essential
+  - mongodb-org
+
+bootcmd:
+  - wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+  - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+  - apt-get ubuntu
 
 runcmd:
-  - wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
-  - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.2.list
-  - apt-get update
-  - apt-get install -y apt-transport-https libcurl3-gnutls ca-certificates
-  - apt-get install -y mongodb-org
   - systemctl start mongod
   - systemctl enable mongod
-  - cd /home/andrey
+  - cd /home/ubuntu
   - git clone -b monolith https://github.com/express42/reddit.git
   - cd reddit && bundle install
   - puma -d
