@@ -8,5 +8,5 @@ apt-get instal apt-transport-https ca-certificates
 apt-get update
 apt-get install -y mongodb-org
 
-systemctl start mongo
+systemctl start mongod
 systemctl enable mongod
