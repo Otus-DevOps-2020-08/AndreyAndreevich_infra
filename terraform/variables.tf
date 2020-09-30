@@ -27,3 +27,7 @@ variable public_key_path {
 variable private_key_path {
   description = "Path to the private key"
 }
+variable reddit_app_port {
+  description = "reddit app port"
+  default     = 9292
+}

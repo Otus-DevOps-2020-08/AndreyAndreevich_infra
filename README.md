@@ -37,4 +37,5 @@ testapp_port = 9292
 
 ## Homework №6 (terraform-1)
 
-1. Создана app VM с помощью terraform
+1. Создана app VM "reddit-app" с помощью terraform
+2. Создан load balancer "reddit-lb" с помощью terraform
