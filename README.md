@@ -39,3 +39,4 @@ testapp_port = 9292
 
 1. Создана app VM "reddit-app" с помощью terraform
 2. Создан load balancer "reddit-lb" с помощью terraform
+3. Создана app VM "reddit-app2" и проверена балансировка нагрузки

@@ -28,6 +28,11 @@ variable private_key_path {
   description = "Path to the private key"
 }
 variable reddit_app_port {
-  description = "reddit app port"
+  description = "Reddit app port"
   default     = 9292
+}
+variable instances {
+    description = "Reddit app instances"
+    type = set(string)
+    default = ["reddit-app", "reddit-app-2"]
 }

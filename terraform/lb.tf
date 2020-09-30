@@ -1,9 +1,13 @@
 resource "yandex_lb_target_group" "lb_target_group" {
     name = "reddit-lb-target-group"
 
-    target {
-        subnet_id = var.subnet_id
-        address   = yandex_compute_instance.app.network_interface.0.ip_address
+    dynamic "target" {
+        iterator = ip_address
+        for_each = values(yandex_compute_instance.app).*.network_interface.0.ip_address
+        content {
+            subnet_id = var.subnet_id
+            address   = ip_address.value
+        }
     }
 }
 
