@@ -34,3 +34,7 @@ testapp_port = 9292
 * Создание VM из полного образа: `./config-script/config-scripts/create-reddit-vm.sh`
 
 Проблемы с сетью решил путем добавления `subnet_id` в конфиг
+
+## Homework №6 (terraform-1)
+
+1. Создана app VM с помощью terraform
