@@ -34,3 +34,10 @@ testapp_port = 9292
 * Создание VM из полного образа: `./config-script/config-scripts/create-reddit-vm.sh`
 
 Проблемы с сетью решил путем добавления `subnet_id` в конфиг
+
+## Homework №6 (terraform-1)
+
+1. Создана app VM "reddit-app" с помощью terraform
+2. Создан load balancer "reddit-lb" с помощью terraform
+3. Создана app VM "reddit-app2" и проверена балансировка нагрузки
+4. Добавлено динамическое создание инстансов через set

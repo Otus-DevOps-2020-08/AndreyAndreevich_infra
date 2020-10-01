@@ -1,0 +1,15 @@
+# Ide
+.vscode
+.my_creds
+
+# User files
+.creds
+*/variables.json
+
+# Terraform
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+.terraform/
+terraform/versions.tf
