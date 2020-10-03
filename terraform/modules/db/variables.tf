@@ -6,5 +6,5 @@ variable db_disk_image {
   default     = "reddit-db-base"
 }
 variable subnet_id {
-    description = "Subnets for modules"
+  description = "Subnets for modules"
 }

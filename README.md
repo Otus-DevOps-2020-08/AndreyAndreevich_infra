@@ -46,3 +46,5 @@ testapp_port = 9292
 
 * Сборка образа с приложением: `packer build -var-file="./variables.json" ./app.json`
 * Сборка образа с базой данных: `packer build -var-file="./variables.json" ./db.json`
+* Созданы terraform модули: app, db, vpc
+* Созданы окружения: prod, stage, vpc

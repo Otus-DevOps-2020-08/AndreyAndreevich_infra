@@ -1,14 +1,14 @@
 resource "yandex_lb_target_group" "lb_target_group" {
-    name = "reddit-lb-target-group"
+  name = "reddit-lb-target-group"
 
-    dynamic "target" {
-        iterator = ip_address
-        for_each = values(yandex_compute_instance.app).*.network_interface.0.ip_address
-        content {
-            subnet_id = var.subnet_id
-            address   = ip_address.value
-        }
+  dynamic "target" {
+    iterator = ip_address
+    for_each = values(yandex_compute_instance.app).*.network_interface.0.ip_address
+    content {
+      subnet_id = var.subnet_id
+      address   = ip_address.value
     }
+  }
 }
 
 resource "yandex_lb_network_load_balancer" "lb" {
