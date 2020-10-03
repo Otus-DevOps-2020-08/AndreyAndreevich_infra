@@ -29,8 +29,8 @@ testapp_port = 9292
 
 ## Homework №5 (packer-base)
 
-* Создание базового образа: `packer build -var-file="./packer/variables.json" ./packer/ubuntu16.json`
-* Создание полного образа: `packer build -var-file="./packer/variables.json" ./packer/immutable.json`
+* Создание базового образа: `packer build -var-file="./variables.json" ./ubuntu16.json`
+* Создание полного образа: `packer build -var-file="./variables.json" ./immutable.json`
 * Создание VM из полного образа: `./config-script/config-scripts/create-reddit-vm.sh`
 
 Проблемы с сетью решил путем добавления `subnet_id` в конфиг
@@ -41,3 +41,8 @@ testapp_port = 9292
 2. Создан load balancer "reddit-lb" с помощью terraform
 3. Создана app VM "reddit-app2" и проверена балансировка нагрузки
 4. Добавлено динамическое создание инстансов через set
+
+## Homework №6 (terraform-2)
+
+* Сборка образа с приложением: `packer build -var-file="./variables.json" ./app.json`
+* Сборка образа с базой данных: `packer build -var-file="./variables.json" ./db.json`
