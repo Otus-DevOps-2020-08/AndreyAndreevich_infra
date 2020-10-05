@@ -1,7 +1,7 @@
 cloud_id                 = "cloud_id"
 folder_id                = "folder_id"
 zone                     = "ru-central1-a"
-service_account_key_file = "key.json"
+service_account_key_file = "/tmp/example.json"
 public_key_path          = "~/.ssh/yc.pub"
 private_key_path         = "~/.ssh/yc"
 app_disk_image           = "fd816aoo7ov5nsql619m"
