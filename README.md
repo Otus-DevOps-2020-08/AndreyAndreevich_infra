@@ -42,7 +42,7 @@ testapp_port = 9292
 3. Создана app VM "reddit-app2" и проверена балансировка нагрузки
 4. Добавлено динамическое создание инстансов через set
 
-## Homework №6 (terraform-2)
+## Homework №7 (terraform-2)
 
 * Сборка образа с приложением: `packer build -var-file="./variables.json" ./app.json`
 * Сборка образа с базой данных: `packer build -var-file="./variables.json" ./db.json`
@@ -60,4 +60,4 @@ testapp_port = 9292
 * Заменил `puma.service` на `puma.service.template`
 * Добавил экспорт переменной `DATABASE_URL` в `provission` `app`
 * Добавлил проброс переменной `db_addr` из `db` в `app`
-* В модуль `db` добавил изменение конфига
+* В модуль `db` добавил изменение конфига mongo
