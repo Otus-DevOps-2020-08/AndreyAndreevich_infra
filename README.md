@@ -82,3 +82,4 @@ ansible-playbook reddit_app.yml --limit app --tags deploy-tag
 ```
 * Написал несколько сценариев в одном playbook `reddit_app_multiple_plays.yml` и проверил их работу с помощью тегов
 * Разделили playbook `reddit_app_multiple_plays.yml` на три и проверил `sudo ansible-playbook site.yml`
+* Добавил проброс `internal_ip_address_db` из terraform в ansible playbook через dinamyc inventory

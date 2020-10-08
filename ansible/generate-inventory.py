@@ -21,18 +21,20 @@ if args.list:
     t = python_terraform.Terraform(working_dir=os.path.join(project_path, 'terraform', 'prod'))
     output = t.output(json=True)
 
-    app_addr = output['external_ip_address_app']['value']
-    db_addr = output['external_ip_address_db']['value']
+    external_ip_address_app = output['external_ip_address_app']['value']
+    external_ip_address_db = output['external_ip_address_db']['value']
+    internal_ip_address_db = output['internal_ip_address_db']['value']
 
     result
 
     result = {
         '_meta': {
             'hostvars': {
-                app_addr: {
-                    'ansible_python_interpreter': python3
+                external_ip_address_app: {
+                    'ansible_python_interpreter': python3,
+                    'internal_ip_address_db': internal_ip_address_db
                 },
-                db_addr: {
+                external_ip_address_db: {
                     'ansible_python_interpreter': python3
                 }
             }
@@ -49,12 +51,12 @@ if args.list:
         },
         'appserver': {
             'hosts': [
-                app_addr
+                external_ip_address_app
             ]
         },
         'dbserver': {
             'hosts': [
-                db_addr
+                external_ip_address_db
             ]
         }
     }

@@ -2,7 +2,8 @@
     "_meta": {
         "hostvars": {
             "130.193.50.9": {
-                "ansible_python_interpreter": "/usr/bin/python3"
+                "ansible_python_interpreter": "/usr/bin/python3",
+                "internal_ip_address_db": "192.168.10.13"
             },
             "84.201.175.33": {
                 "ansible_python_interpreter": "/usr/bin/python3"
