@@ -13,4 +13,4 @@
 *.tfvars
 .terraform/
 *versions.tf
-*/backend.tf
+*backend.tf
