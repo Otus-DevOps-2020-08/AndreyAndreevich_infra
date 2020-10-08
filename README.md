@@ -63,6 +63,7 @@ testapp_port = 9292
 * В модуль `db` добавил изменение конфига mongo
 
 ## Homework №8 (ansible-1)
+
 * Поставлен `ansible`
 * Поднято окружение с помощью `terraform`
 * Выполнил ping для `appserver` и `dbserver`. Пришлось выставить `ansible_python_interpreter=/usr/bin/python3`
@@ -70,3 +71,14 @@ testapp_port = 9292
 * Заменил `inventory` на `inventory.yml`
 * При первом клнировании в home dir уже был `reddit`
 * Добавли скрипт для динамического создания `inventory.json`
+
+## Homework №9 (ansible-2)
+
+* Обновлена конфигурация монго с помощью `ansible-playbook reddit_app.yml --limit db`
+* Задеплоил app с помощью
+```
+ansible-playbook reddit_app.yml --limit app --tags app-tag
+ansible-playbook reddit_app.yml --limit app --tags deploy-tag
+```
+* Написал несколько сценариев в одном playbook `reddit_app_multiple_plays.yml` и проверил их работу с помощью тегов
+* Разделили playbook `reddit_app_multiple_plays.yml` на три и проверил `sudo ansible-playbook site.yml`

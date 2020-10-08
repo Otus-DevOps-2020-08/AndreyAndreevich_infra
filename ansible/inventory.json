@@ -1,10 +1,10 @@
 {
     "_meta": {
         "hostvars": {
-            "130.193.48.87": {
+            "130.193.50.9": {
                 "ansible_python_interpreter": "/usr/bin/python3"
             },
-            "178.154.225.116": {
+            "84.201.175.33": {
                 "ansible_python_interpreter": "/usr/bin/python3"
             }
         }
@@ -16,7 +16,7 @@
     },
     "appserver": {
         "hosts": [
-            "178.154.225.116"
+            "130.193.50.9"
         ]
     },
     "db": {
@@ -26,7 +26,7 @@
     },
     "dbserver": {
         "hosts": [
-            "130.193.48.87"
+            "84.201.175.33"
         ]
     }
 }
