@@ -12,4 +12,5 @@
 *.tfstate.backup
 *.tfvars
 .terraform/
-terraform/versions.tf
+*versions.tf
+*/backend.tf

@@ -1,5 +1,6 @@
-#!/bin/bash -x
+#!/bin/bash
 set -e
+cat /tmp/puma.service
 APP_DIR=${1:-$HOME}
 sudo apt-get update
 sleep 3

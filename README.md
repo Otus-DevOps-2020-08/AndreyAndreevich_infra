@@ -29,8 +29,8 @@ testapp_port = 9292
 
 ## Homework №5 (packer-base)
 
-* Создание базового образа: `packer build -var-file="./packer/variables.json" ./packer/ubuntu16.json`
-* Создание полного образа: `packer build -var-file="./packer/variables.json" ./packer/immutable.json`
+* Создание базового образа: `packer build -var-file="./variables.json" ./ubuntu16.json`
+* Создание полного образа: `packer build -var-file="./variables.json" ./immutable.json`
 * Создание VM из полного образа: `./config-script/config-scripts/create-reddit-vm.sh`
 
 Проблемы с сетью решил путем добавления `subnet_id` в конфиг
@@ -41,3 +41,23 @@ testapp_port = 9292
 2. Создан load balancer "reddit-lb" с помощью terraform
 3. Создана app VM "reddit-app2" и проверена балансировка нагрузки
 4. Добавлено динамическое создание инстансов через set
+
+## Homework №7 (terraform-2)
+
+* Сборка образа с приложением: `packer build -var-file="./variables.json" ./app.json`
+* Сборка образа с базой данных: `packer build -var-file="./variables.json" ./db.json`
+* Созданы terraform модули: app, db, vpc
+* Созданы окружения: prod, stage, vpc
+* Добавил `backend.tf` в папки prod и stage. В качестве проверки использовал те же окружения,
+т.к. они полностью идетичны.
+Если выполнить последовательно `terraform apply` в prod и в dev, то инстансы будут созданы только
+для prod. Для dev же будут использованы инстансы prod.
+Если выполнить параллельно `terraform apply` в prod и в dev, то в одном из вызовов будет выполнено
+создание инстансов, а в другом нет (вызов авершится ошибкой). Может даже произойти такое, что в
+одном из вызовов раньше будетсоздан инстанс `app`, а в другом `db`. В итоге оба вызова завершатся
+с ошибкой.
+* Добавил файлы для запуска приложения в модуль `app`
+* Заменил `puma.service` на `puma.service.template`
+* Добавил экспорт переменной `DATABASE_URL` в `provission` `app`
+* Добавлил проброс переменной `db_addr` из `db` в `app`
+* В модуль `db` добавил изменение конфига mongo
