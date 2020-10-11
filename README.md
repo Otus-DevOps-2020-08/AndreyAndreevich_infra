@@ -61,3 +61,12 @@ testapp_port = 9292
 * Добавил экспорт переменной `DATABASE_URL` в `provission` `app`
 * Добавлил проброс переменной `db_addr` из `db` в `app`
 * В модуль `db` добавил изменение конфига mongo
+
+## Homework №8 (ansible-1)
+* Поставлен `ansible`
+* Поднято окружение с помощью `terraform`
+* Выполнил ping для `appserver` и `dbserver`. Пришлось выставить `ansible_python_interpreter=/usr/bin/python3`
+* Создал `ansible.cfg`
+* Заменил `inventory` на `inventory.yml`
+* При первом клнировании в home dir уже был `reddit`
+* Добавли скрипт для динамического создания `inventory.json`
