@@ -1,0 +1,13 @@
+---
+- name: Install Ruby and Bundler for App
+  hosts: app
+  become: true
+
+  tasks:
+    - name: Install Ruby
+      apt:
+        pkg:
+        - ruby-full
+        - ruby-bundler
+        - build-essential
+        force_apt_get: yes

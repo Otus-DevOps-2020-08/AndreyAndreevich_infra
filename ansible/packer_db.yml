@@ -1,0 +1,23 @@
+---
+- name: Intall Mongo
+  hosts: db
+  become: true
+
+  tasks:
+    - name: Add an apt signing key for mongo
+      apt_key:
+        url: https://www.mongodb.org/static/pgp/server-4.4.asc
+        state: present
+
+    - name: Create source file for mongo
+      copy:
+        content: "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.4 multiverse"
+        dest: /etc/apt/sources.list.d/mongodb-org-4.4.list
+
+    - name: Install packages
+      apt:
+        pkg:
+        - apt-transport-https
+        - ca-certificates
+        - mongodb-org
+        force_apt_get: yes
