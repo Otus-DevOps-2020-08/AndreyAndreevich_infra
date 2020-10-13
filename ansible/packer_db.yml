@@ -1,6 +1,6 @@
 ---
 - name: Intall Mongo
-  hosts: db
+  hosts: all
   become: true
 
   tasks:
@@ -21,3 +21,4 @@
         - ca-certificates
         - mongodb-org
         force_apt_get: yes
+        update_cache: yes

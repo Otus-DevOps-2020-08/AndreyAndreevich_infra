@@ -15,9 +15,12 @@
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_mongodb.sh",
-            "execute_command": "sudo {{.Path}}"
+            "type": "ansible",
+            "user": "ubuntu",
+            "playbook_file": "ansible/packer_db.yml",
+            "extra_arguments": [
+                "-e", "ansible_python_interpreter=/usr/bin/python3"
+            ]
         }
     ]
 }

@@ -32,12 +32,4 @@ resource "yandex_compute_instance" "db" {
     agent       = false
     private_key = file(var.private_key_path)
   }
-
-  provisioner "remote-exec" {
-    inline = [
-      "sudo systemctl stop mongod",
-      "sudo sed -i s/\"127.0.0.1\"/\"${self.network_interface.0.ip_address}\"/g /etc/mongod.conf",
-      "sudo systemctl start mongod"
-    ]
-  }
 }

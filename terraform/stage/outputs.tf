@@ -7,3 +7,6 @@ output "external_ip_address_db" {
 output "internal_ip_address_db" {
   value = module.db.internal_ip_address_db
 }
+output "external_subnet_id" {
+  value = module.vpc.external_subnet_id
+}

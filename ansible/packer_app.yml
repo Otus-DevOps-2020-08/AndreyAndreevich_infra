@@ -1,13 +1,15 @@
 ---
-- name: Install Ruby and Bundler for App
-  hosts: app
+- name: Install Dependencies for App
+  hosts: all
   become: true
 
   tasks:
-    - name: Install Ruby
+    - name: Install Deps
       apt:
         pkg:
         - ruby-full
         - ruby-bundler
         - build-essential
+        - git
         force_apt_get: yes
+        update_cache: yes
