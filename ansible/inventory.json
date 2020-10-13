@@ -1,10 +1,11 @@
 {
     "_meta": {
         "hostvars": {
-            "130.193.48.87": {
-                "ansible_python_interpreter": "/usr/bin/python3"
+            "84.201.134.70": {
+                "ansible_python_interpreter": "/usr/bin/python3",
+                "internal_ip_address_db": "192.168.10.25"
             },
-            "178.154.225.116": {
+            "84.201.173.126": {
                 "ansible_python_interpreter": "/usr/bin/python3"
             }
         }
@@ -16,7 +17,7 @@
     },
     "appserver": {
         "hosts": [
-            "178.154.225.116"
+            "84.201.134.70"
         ]
     },
     "db": {
@@ -26,7 +27,7 @@
     },
     "dbserver": {
         "hosts": [
-            "130.193.48.87"
+            "84.201.173.126"
         ]
     }
 }
