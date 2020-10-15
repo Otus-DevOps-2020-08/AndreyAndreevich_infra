@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Otus-DevOps-2020-08/AndreyAndreevich_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2020-08/AndreyAndreevich_infra)
+
 # AndreyAndreevich_infra
 AndreyAndreevich Infra repository
 
