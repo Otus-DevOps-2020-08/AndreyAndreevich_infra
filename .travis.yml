@@ -13,8 +13,8 @@ before_script:
   - sudo unzip terraform.zip -d /opt/terraform
   - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
   - rm -f terraform.zip
-  - pip install --upgrade pip
-  - pip install ansible-lint
+  - sudo pip install --upgrade pip
+  - sudo pip install ansible-lint
 
 script:
   - packer validate -syntax-only packer/ubuntu16.json
