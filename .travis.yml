@@ -21,3 +21,4 @@ script:
   - packer validate -syntax-only packer/db.json
   - terraform validate terraform/stage/ -recursive
   - terraform validate terraform/prod/ -recursive
+  - ansible-lint anisble/playbooks/app.yml
