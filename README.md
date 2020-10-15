@@ -90,3 +90,4 @@ ansible-playbook reddit_app.yml --limit app --tags deploy-tag
 
 * Создал роли для `app` и `db`
 * Настроил `stage` и `prod` окружения
+* Добавил роль nginx и проверил работу приложения на 80 порту через nginx

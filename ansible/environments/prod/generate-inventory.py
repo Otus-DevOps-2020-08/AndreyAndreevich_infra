@@ -23,15 +23,15 @@ if args.list:
     external_ip_address_app = output['external_ip_address_app']['value']
     external_ip_address_db = output['external_ip_address_db']['value']
     internal_ip_address_db = output['internal_ip_address_db']['value']
-
-    result
+    reddit_app_port = output['reddit_app_port']['value']
 
     result = {
         '_meta': {
             'hostvars': {
                 external_ip_address_app: {
                     'ansible_python_interpreter': python3,
-                    'internal_ip_address_db': internal_ip_address_db
+                    'internal_ip_address_db': internal_ip_address_db,
+                    'reddit_app_port': reddit_app_port
                 },
                 external_ip_address_db: {
                     'ansible_python_interpreter': python3
