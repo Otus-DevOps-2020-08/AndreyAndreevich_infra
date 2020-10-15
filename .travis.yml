@@ -9,9 +9,10 @@ notifications:
       secure: nm+oY+ZXf1jJPu+ogW5HpgtiVxdzOhUB8F2AwvNgycMCT6ilXMziFP7sD3yankRoVZn+MOAhtTYILslC4U5jREyHRIpeAMFVKcgbInlnKVt4wGHvVDiJkGzZLZQTHWkoaGtyvBYJswKA7OEQcAiaemc4/nb2+ZVmcUD2xElnbt0+YoWWrS9Fv2FFPNa0uX4Gt/2wj/SlfCmu9LkwAga5Kt7D1+udmRjxNkv6YQFreFR6jFcA9gw9ZFVzZRnBpX2ZW8WcDDcj6lJQCkL5RfAfevcyrSwhGvaOBD3cbUARsH6QkvsxApcjdVGPFXixeHWdH3EnHak6gZbNjeaslCiX/Q2Jqm34O6DKnReXpJkVuzrjyTQtRx2hFh54U7Yw+E50eWwJZO6/FSa/5FXwPQH+c5Ap8WtYXhcOdGRj1QrjeHGxITI/iqyN53JIOfFB2G9f7dpST3IaCkIt2OGxEChGLzSlaY7znwNdVhwWIQnhu+ookjvOmdjI3GNWp5q/1o7ABEHrP5Ktsy6AsxOhNe7V4AgQ/bdT0DZfSeoOKgqKlzwAdMI5HAZRfshoZxpIM/RYmL5HhR6Mx20LiqOmBZKAvRj1gIKnzHx8qPRQm6xV0rC2lflSnPtFJ/cS+8Azllj/549GXUWWP0gqOXPQsiPchisnuhbTpsqvrCh0vK9shUo=
 
 before_script:
-  - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-  - sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-  - sudo apt-get update && sudo apt-get install terraform
+  - curl -fSL "https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip" -o terraform.zip
+  - sudo unzip terraform.zip -d /opt/terraform
+  - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
+  - rm -f terraform.zip
 
 script:
   - packer validate -syntax-only packer/ubuntu16.json
