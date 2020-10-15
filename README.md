@@ -95,3 +95,5 @@ ansible-playbook reddit_app.yml --limit app --tags deploy-tag
 * Добавил роль nginx и проверил работу приложения на 80 порту через nginx
 * Создал пользователей с помощью `users.yml` playbook и vault
 * Использую dynamic inventory для `prod` и `stage`
+* Добавил валидацию packer, terraform и ansible в CI
+* Добавил build status в Readme
