@@ -10,6 +10,7 @@ notifications:
 
 before_script:
   - curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
+  - source "/home/travis/.bashrc"
 
 script:
   - yc config list
