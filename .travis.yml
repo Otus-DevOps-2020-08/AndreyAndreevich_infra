@@ -13,7 +13,8 @@ before_script:
   - source "/home/travis/.bashrc"
 
 script:
-  - yc init --profile ./test.profile
+  #- yc init --profile ./test.profile
+  - yc init --token $YC_TOKEN
   - yc config list
   - packer validate -var-file=packer/variables.json.example packer/ubuntu16.json
   - packer validate -var-file=packer/variables.json.example packer/immutable.json
