@@ -102,3 +102,5 @@ ansible-playbook reddit_app.yml --limit app --tags deploy-tag
 
 * Поднял VMs `appserver` и `dbserver` с помощью vagrant
 * Задеплоил приложение с помощью vagrant
+* Добавил возможность конфигурирования пользователя при развороте приложения
+* Добавил конфигурацию nginx в vagrant файл
