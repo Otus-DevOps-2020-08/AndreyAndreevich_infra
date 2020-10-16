@@ -97,3 +97,8 @@ ansible-playbook reddit_app.yml --limit app --tags deploy-tag
 * Использую dynamic inventory для `prod` и `stage`
 * Добавил валидацию packer, terraform и ansible в CI
 * Добавил build status в Readme
+
+## Homework №10 (ansible-4)
+
+* Поднял VMs `appserver` и `dbserver` с помощью vagrant
+* Задеплоил приложение с помощью vagrant

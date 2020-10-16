@@ -1,0 +1,10 @@
+---
+- name: Install Deps
+  apt:
+    pkg:
+    - ruby-full
+    - ruby-bundler
+    - build-essential
+    force_apt_get: yes
+    update_cache: yes
+  tags: ruby
