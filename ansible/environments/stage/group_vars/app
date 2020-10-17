@@ -1,0 +1,4 @@
+db_host: "{{ internal_ip_address_db }}"
+nginx_listen_port: 80
+server_name: reddit
+proxy_pass: http://127.0.0.1:{{ reddit_app_port }}

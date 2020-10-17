@@ -17,3 +17,7 @@
 
 # ansible
 *.retry
+.ansible
+
+# ansible community roles
+jdauphant.nginx

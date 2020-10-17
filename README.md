@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Otus-DevOps-2020-08/AndreyAndreevich_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2020-08/AndreyAndreevich_infra)
+
 # AndreyAndreevich_infra
 AndreyAndreevich Infra repository
 
@@ -85,3 +87,13 @@ ansible-playbook reddit_app.yml --limit app --tags deploy-tag
 * Добавил проброс `internal_ip_address_db` из terraform в ansible playbook через dinamyc inventory
 * Собрал образы packer-ом c помощью ansible provisioners, создал из них основе VM и развернул приложение с бд
 * Для удобства stage теперь создает vpc
+
+## Homework №10 (ansible-3)
+
+* Создал роли для `app` и `db`
+* Настроил `stage` и `prod` окружения
+* Добавил роль nginx и проверил работу приложения на 80 порту через nginx
+* Создал пользователей с помощью `users.yml` playbook и vault
+* Использую dynamic inventory для `prod` и `stage`
+* Добавил валидацию packer, terraform и ansible в CI
+* Добавил build status в Readme
