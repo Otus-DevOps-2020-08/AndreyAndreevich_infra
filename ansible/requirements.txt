@@ -1,2 +1,6 @@
 ansible>=2.4
 python-terraform==0.10.1
+molecule>=2.7.0
+testinfra>=1.10
+molecule-vagrant>=0.3
+python-vagrant>=0.5.15
