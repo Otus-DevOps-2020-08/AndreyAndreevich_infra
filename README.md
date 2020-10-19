@@ -106,3 +106,5 @@ ansible-playbook reddit_app.yml --limit app --tags deploy-tag
 * Добавил конфигурацию nginx в vagrant файл
 * Создал виртуальное окружение с python и поставил туда все зависимости
 * Создал VM с db и протестировал ее с помощью molecule
+* Добавил тест на прослушивание порта
+* Изменил playbooks `packer_app.yml` и `packer_db.yml` на вариант с вызовом ролей `app` и `db` и собрал packer-ом образы.

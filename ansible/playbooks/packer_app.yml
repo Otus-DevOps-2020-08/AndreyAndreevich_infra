@@ -2,14 +2,5 @@
 - name: Install Dependencies for App
   hosts: all
   become: true
-
-  tasks:
-    - name: Install Deps
-      apt:
-        pkg:
-        - ruby-full
-        - ruby-bundler
-        - build-essential
-        - git
-        force_apt_get: yes
-        update_cache: yes
+  roles:
+    - app

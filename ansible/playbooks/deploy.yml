@@ -4,6 +4,11 @@
   become: true
 
   tasks:
+    - name: Install Git
+      apt:
+        pkg:
+        - git
+
     - name: Fetch the latest version of application code
       git:
         repo: 'https://github.com/express42/reddit.git'
