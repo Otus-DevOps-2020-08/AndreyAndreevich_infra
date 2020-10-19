@@ -5,3 +5,6 @@
     dest: /etc/mongod.conf
     mode: 0644
   notify: restart mongod
+
+- name: enable mongo
+  systemd: name=mongod enabled=yes
